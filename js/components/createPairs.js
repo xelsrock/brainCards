@@ -1,4 +1,5 @@
 import { createElement } from "../helper/createElement.js"
+import { shuffle } from "../helper/shuffle.js";
 import { showAlert } from "./showAlert.js";
 
 export const createPairs = (app) => {
@@ -72,7 +73,9 @@ export const createPairs = (app) => {
 
   const mount = data => {
     app.append(pairs);
-    cardController(data.pairs); // перемешать
+    const mix = shuffle(data.pairs);
+    console.log(mix);
+    cardController(mix);
   };
 
   const unmount = () => {
