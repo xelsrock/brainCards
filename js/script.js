@@ -129,6 +129,14 @@ const initApp = async () => {
     };
   });
 
+  const returnBtnCancel = () => {
+    if (confirm('Вы уверены, что хотите покинуть страницу?')) {
+      renderIndex();
+    };
+    return;
+  };
+
+  editCategoryObj.btnCancel.addEventListener('click', returnBtnCancel);
   pairsObj.btnReturn.addEventListener('click', renderIndex);
 };
 
